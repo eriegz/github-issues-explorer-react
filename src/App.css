@@ -1,0 +1,9 @@
+.App {
+  height: 100vh;
+}
+
+#header-and-content-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

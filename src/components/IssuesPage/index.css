@@ -1,0 +1,92 @@
+* {
+  --issues-grid-padding: 2rem;
+}
+
+#issues-page-container {
+  height: 100%;
+  /* Below: This calculated min-width value ensures that both "main portions" of the Issues page (i.e.: the header and
+    the page content) scale at the same rate when the screen size decreases: */
+  min-width: calc(
+    var(--header-min-col-width)
+    + (2 * var(--header-border-width))
+    + (2 * var(--header-padding))
+  );
+  display: flex;
+  flex-direction: column;
+}
+
+.issues-button-tray {
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.issues-filter-button {
+  background: none;
+  border-style: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0px;
+  margin-right: 2rem;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.full-height-centered-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: grey;
+  margin: 2rem;
+  font-size: 28px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.error {
+  color: rgb(255, 75, 75);
+  font-weight: 500;
+}
+
+#issues-grid-view {
+  padding: var(--issues-grid-padding);
+  min-width: fit-content;
+  /* Below: Display our tiles in a grid, every tile taking up a maximum width based on the number of columns, and where
+    the number of columns will automatically decrease when the screen size forces the width of each tile below the
+    specified width. */
+  display: grid;
+  /* Below: Cram as many columns as possible into this grid using "repeat()" and "auto-fit", making each column as wide
+    as possible ("1fr") but no narrower than 380px. If the screen width changes, recalculate both the number of
+    columns and their widths. */
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-gap: 3rem;
+  /* Row can grow in height to fit their contents, but cannot be shorter than 300px: */
+  grid-auto-rows: minmax(300px, auto);
+}
+
+/* Below: Below 700px (i.e.: a number between one and two columns' width), our grid is guaranteed to be only 1 column
+  wide, and we want this single column to be able to squeeze down into even narrower widths below 380px, above. The
+  problem is, though, if simply put a lower number in the above minmax() call, then it will also insert more columns,
+  and we like that number where it is. So to solve this problem we set it here in a media query, and calculate the new
+  minimum width based on the minimum width of the page header, which is also a CSS grid. */
+@media screen and (max-width: 700px) {
+  #issues-grid-view {
+    /* Below: This minimum column width needs to be the same as the minimum column width in the header grid, otherwise
+       there are some visual irregularities as page screen size scales down: */
+    grid-template-columns: minmax(
+      calc(
+        var(--header-min-col-width)
+        + (2 * var(--header-border-width))
+        + (2 * var(--header-padding))
+        - (2 * var(--issues-grid-padding))
+      ),
+      1fr
+    );
+  }
+}

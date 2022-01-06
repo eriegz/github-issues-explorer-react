@@ -1,0 +1,53 @@
+.issue-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: black;
+  border-width: 2.5px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.issue-tile:hover {
+  color: rgb(56, 56, 56);
+}
+
+.title-and-icons-tray {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.issue-tile-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  min-width: 60%;
+  overflow-wrap: break-word;
+}
+
+.icon-tray {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.icon-spacing {
+  margin-top: 0.5rem;
+  margin-left: 0.7rem;
+}
+
+.description-preview {
+  word-wrap: break-word;
+}
+
+.no-description {
+  color: #999;
+}
+
+.issue-labels-tray {
+  display: inline-flex;
+  flex-wrap: wrap;
+}

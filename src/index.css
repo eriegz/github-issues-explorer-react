@@ -1,0 +1,30 @@
+* {
+  /* These sizes are accessed by multiple components to allow different CSS grids to scale in sync with each other: */
+  --header-border-width: 2.5px;
+  --header-padding: 20px;
+  --header-min-col-width: 200px;
+
+  --grey: rgb(97, 97, 97);
+  --light-grey: rgb(182, 182, 182);
+  --very-light-grey: rgb(240, 240, 240);
+}
+
+html {
+  /* Below: just keep scrollbar visible constantly so that we don't have that "jumpy" behaviour if ever content exceeds
+    the viewport height: */
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

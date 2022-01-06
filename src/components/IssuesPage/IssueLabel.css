@@ -1,0 +1,25 @@
+.issue-label {
+  display: inline-flex;
+  border-style: solid;
+  border-color: black;
+  border-width: 2.5px;
+  border-radius: 8px;
+  padding: 0.3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.issue-label-bullet {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 0.7;
+  padding-right: 0.5rem;
+}
+
+.issue-label-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 0.4rem;
+}

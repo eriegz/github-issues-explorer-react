@@ -1,0 +1,52 @@
+#homepage-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#repo-url-search-container {
+  margin: 2rem;
+  width: 700px;
+}
+
+#app-title {
+  text-align: center;
+}
+
+#submit-button {
+  position: absolute;
+  padding-top: 1.5rem;
+  padding-left: 2rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#url-search-input-field {
+  width: 100%;
+  box-sizing: border-box;
+  height: 5rem;
+  padding-left: 5rem;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 3px;
+  font-size: 24px;
+}
+
+#url-search-input-field::placeholder {
+  color: var(--light-grey);
+}
+
+/* Below: At screen widths less than 630px the placeholder text inside the search field gets cut off: */
+@media screen and (max-width: 630px) {
+  #submit-button {
+    padding-left: 1rem;
+    font-size: 22px;
+  }
+  #url-search-input-field {
+    font-size: 18px;
+    padding-left: 3.5rem;
+  }
+}

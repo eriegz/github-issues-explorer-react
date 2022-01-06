@@ -1,0 +1,70 @@
+.no-added-height {
+  height: 0;
+}
+
+#suggestions-container {
+  /* Together with the above "no-added-height" container, we want suggestions to expand downwards without affecting the
+    vertically-centered positions of the other elements on the page: */
+  position: relative;
+  top: 1rem;
+
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--light-grey);
+  border-width: 3px;
+
+  margin-left: 4rem;
+  margin-right: 4rem;
+  padding: 0.5rem;
+  max-height: 200px;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+/* Side note: For some reason we actually need to specify at least one style customization for the "-webkit-scrollbar"
+  pseudo element (even just the value "inherit") in order for the "-thumb" stylings below to get picked up: */
+#suggestions-container::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+#suggestions-container::-webkit-scrollbar-thumb {
+  background-color: var(--light-grey);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  border-radius: 9px;
+}
+
+.suggestion {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.suggestion:not(:first-child) {
+  border-top: 1px solid var(--light-grey);
+}
+
+.suggestion:hover {
+  background-color: var(--very-light-grey)
+}
+
+#suggestions-container-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--light-grey);
+  font-size: 18px;
+}
+
+@media screen and (max-width: 400px) {
+  #suggestions-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  #suggestions-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

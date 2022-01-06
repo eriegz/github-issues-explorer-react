@@ -1,0 +1,28 @@
+#header-container {
+  border-style: solid;
+  border-color: black;
+  border-width: var(--header-border-width);
+  min-width: fit-content;
+  padding: var(--header-padding);
+  /* Below: Display our tiles in a grid, every tile taking up a maximum width based on the number of columns, and where
+    the number of columns will automatically decrease when the screen size forces the width of each tile below the
+    specified width. */
+  display: grid;
+  /* The following will essentially stack our 2 elements once their widths fall below "var(--header-min-col-width)": */
+  grid-template-columns: repeat(auto-fit, minmax(var(--header-min-col-width), 1fr));
+  grid-gap: 1rem;
+}
+
+#header-app-title {
+  font-size: 36px;
+  font-weight: bold;
+  word-wrap: break-word;
+  line-height: 36px;
+}
+
+#header-repo-url {
+  font-size: 28px;
+  text-align: right;
+  word-wrap: break-word;
+  line-height: 36px;
+}
