@@ -36,7 +36,7 @@
 
 - I decided to write my submission in React because:
   - React is fast becoming my personal favourite frontend framework to use (as compared to Vue.js and Angular), and
-  - React is part of the tech stack at Dapper Labs
+  - React is part of the tech stack at many companies
 - Next, I decided that my submission would take the form of a single-page web application, using routing from the "react-router-dom" module for a snappy, responsive feel.
 - I chose to use Axios for the HTTP client due to its great support, dependability, and features.
 - Then finally, I chose to write all React components as functional components using React Hooks, for a lot of the same reasons that the developers introduced Hooks in the first place, i.e.:

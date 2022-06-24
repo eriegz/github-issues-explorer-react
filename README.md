@@ -1,4 +1,4 @@
-# **Dapper Labs Coding Challenge**
+# **GitHub Issues Explorer (React.js)**
 
 This is a simple frontend web application that allows users to paste in the URL of any public GitHub repo and output all issues (well, the first 100 anyways) associated with that repo. The issues are displayed in a responsive grid, each with a short snippet of the description, any associated labels, and icons to indicate whether the issue is open, closed, or a pull request.
 
