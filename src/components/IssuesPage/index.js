@@ -63,8 +63,8 @@ function Issues() {
           });
       })();
     },
-    // Below: React complains if any dependencies are omitted from this array, regardless if they are actually watched
-    // or not:
+    // Below: React complains if any dependencies are omitted from this array, regardless of whether or not their values
+    // actually affect the rendered output:
     [repoUrl, history]
   );
 
@@ -95,8 +95,7 @@ function Issues() {
       return (
         <div className="full-height-centered-container">
           <p className="placeholder-text error">
-            Invalid URL entered, or repo permissions are set to private. Please
-            try again.
+            Invalid URL entered, or repo permissions are set to private. Please try again.
           </p>
         </div>
       );

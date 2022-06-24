@@ -106,7 +106,7 @@ function Homepage() {
             // Being unable to display search suggestions isn't the end of the world, so displaying a simple toast
             // message and resolving (not rejecting) the promise is sufficient. One way in which this error scenario can
             // happen is if too many requests are sent to GitHub's API in a given time span.
-            toast.error("Error: Could not fetch search suggestions",);
+            toast.error("Error: Could not fetch search suggestions");
             resolve(null);
           });
         },
