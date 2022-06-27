@@ -70,11 +70,11 @@
   grid-auto-rows: minmax(300px, auto);
 }
 
-/* Below: Below 700px (i.e.: a number between one and two columns' width), our grid is guaranteed to be only 1 column
-  wide, and we want this single column to be able to squeeze down into even narrower widths below 380px, above. The
-  problem is, though, if simply put a lower number in the above minmax() call, then it will also insert more columns,
-  and we like that number where it is. So to solve this problem we set it here in a media query, and calculate the new
-  minimum width based on the minimum width of the page header, which is also a CSS grid. */
+/* Below: At widths below 700px (i.e.: a number between one and two columns' width), our grid is guaranteed to be only
+  1 column wide, and we want this single column to be able to squeeze down into even narrower widths below 380px, above.
+  The problem is, though, if simply put a lower number in the above minmax() call, then it will also insert more
+  columns, and we like that number where it is. So to solve this problem we set it here in a media query, and calculate
+  the new minimum width based on the minimum width of the page header, which is also a CSS grid. */
 @media screen and (max-width: 700px) {
   #issues-grid-view {
     /* Below: This minimum column width needs to be the same as the minimum column width in the header grid, otherwise

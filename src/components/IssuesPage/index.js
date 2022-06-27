@@ -29,20 +29,23 @@ function Issues() {
   const repoUrl = new URLSearchParams(useLocation().search).get("r");
   const history = useHistory();
 
-  // useEffect by default gets called every render, and so to make it execute only once the typical practice is to pass
-  // an empty dependency array to "useEffect" as the 2nd argument. The array below is not empty (for reasons explained
-  // below), but the end result is the same (i.e.: this function only executes once per page load).
+  // useEffect by default gets called every render, and so to make it execute only once the typical
+  // practice is to pass an empty dependency array to "useEffect" as the 2nd argument. The array
+  // below is not empty (for reasons explained below), but the end result is the same (i.e.: this
+  // function only executes once per page load).
   useEffect(
     () => {
       (function () {
-        // Catch malformed / missing "r" query param errors in case users navigate directly to this page:
+        // Catch malformed or missing "r" query param errors in case users navigate directly to this
+        // page:
         if (typeof repoUrl !== "string" || repoUrl.length === 0) {
           return history.push("/");
         }
 
         let orgAndRepo = repoUrl.split("github.com/")[1];
         let [orgName, repoName] = orgAndRepo.split("/");
-        // TODO: Call GitHub's "/graphql" endpoint instead in order to cut down on the response size:
+        // TODO: Call GitHub's "/graphql" endpoint instead in order to cut down on the response
+        // size:
         Axios.get(
           `https://api.github.com/repos/${orgName}/${repoName}/issues`,
           {
@@ -63,8 +66,8 @@ function Issues() {
           });
       })();
     },
-    // Below: React complains if any dependencies are omitted from this array, regardless of whether or not their values
-    // actually affect the rendered output:
+    // Below: React complains if any dependencies are omitted from this array, regardless of whether
+    // or not their values actually affect the rendered output:
     [repoUrl, history]
   );
 
@@ -77,8 +80,8 @@ function Issues() {
 
   // ----------------- Helper functions: ------------------
   function getIssuesOrPlaceholderTextElements() {
-    // This function generates what we show to the user while the page is initializing (including waiting for the
-    // backend call to complete):
+    // This function generates what we show to the user while the page is initializing (including
+    // waiting for the backend call to complete):
     //   - If the HTTP request is still "in-flight", show a "loading" placeholder text
     //   - Else, once we've received the HTTP response:
     //     - if there are more than 0 issues found, display them
