@@ -17,11 +17,3 @@ Then run the application:
 `npm run start`
 
 The application will automatically open up in a new window in your computer's default web browser.
-
-## **Notes:**
-
-The following functionality were not implemented as they were deemed out of scope / low priority for this assignment:
-- Transitions or animations between screens
-- Any alt text on icons indicating what they represent (e.g.: "closed" icon)
-- Any GraphQL queries, as the GitHub REST API already has a single endpoint that returns all of the data we need, and a GraphQL query would just bring performance optimizations
-- Exact fonts to match those on the Figma designs (i.e.: only the default fonts from `create-react-app` were used)
